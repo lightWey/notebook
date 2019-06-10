@@ -1,6 +1,6 @@
 <?php
+$rp = $argv[1] ?? '';
 $p = getcwd();
-
 $config = [
 	'github.com'  => 'https://raw.githubusercontent.com/{{name}}/{{notebook}}/{{branch}}/{{path}}',
     'git.dev.tencent.com' => 'https://dev.tencent.com/u/{{name}}/p/{{notebook}}/git/raw/{{branch}}/{{path}}'
@@ -22,16 +22,7 @@ if ($b || empty($a)) {
 }
 
 
-$pattern = '/^origin\s(https?:\/\/(.+\.com).*\.git).*\(push\)/';
-
-$cc = [];
-
-foreach ($a as $v) {
-	$c1 = [];
-	if (preg_match($pattern, $v, $c1) && isset($c1[2])) {
-		$cc[] = $c1[2];
-	}
-}
+$pattern = '/^origin\s(https?:\/\/(.+\.com)\/(\w+).*\/(\w+)\.git).*\(push\)/';
 
 
 $lists = scandir($p);
@@ -41,10 +32,29 @@ if (empty($lists)) {
 }
 
 $list = array_filter($lists, function ($v) {
-	if (preg_match('/.+\.(jpg|jpeg|bmp|gif)/i', $v)) {
+	if (preg_match('/.+\.(jpg|jpeg|bmp|gif|png)/i', $v)) {
 		return true;
 	}
 });
 
 
-print_r($list);
+
+foreach ($a as $v) {
+	$c1 = [];
+	if (preg_match($pattern, $v, $c1) && isset($c1[2])) {
+		$str = preg_replace('/{{\w+}}/','%s',$config[$c1[2]]);
+		$rp = $rp ?: $c1[4];
+		$s = stripos($p, $rp);
+		$rpc = substr($p, $s+strlen($rp)+1);
+		foreach ($list as $v) {
+			echo sprintf($str, $c1[3], $rp, 'master', $rpc.DIRECTORY_SEPARATOR.$v),PHP_EOL;	
+		}
+		echo PHP_EOL;
+	}
+}
+
+
+
+
+
+//print_r($list);
