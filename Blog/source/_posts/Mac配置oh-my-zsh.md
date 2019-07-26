@@ -3,7 +3,7 @@ title: Mac配置oh-my-zsh
 date: 2019-04-27 20:14:06
 updated: 2019-04-27 20:14:06
 tags: [zsh,linux]
-categories: 工具-命令行
+categories: [工具, 命令行]
 ---
 
 ## 简介
