@@ -167,7 +167,7 @@ toc:
 
 # SNS Menu
 sns:
-    email: youremail@email.com
+    email: lightWay.zhi@gmailcom
     facebook: "https://www.facebook.com/facebook"
     twitter: "https://twitter.com/twitter"
     googleplus: "https://www.google.com/"
@@ -220,7 +220,7 @@ sidebar:
         divider: false
     footer:
         divider: true
-        theme: true
+        theme: false
         support: false
         feedback: false
         material: false
