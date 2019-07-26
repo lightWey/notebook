@@ -1,9 +1,15 @@
-#mac 配置oh-my-zsh
+---
+title: Mac配置oh-my-zsh
+date: 2019-04-27 20:14:06
+updated: 2019-04-27 20:14:06
+tags: [zsh,linux]
+categories: 工具-命令行
+---
 
-##简介
-
+## 简介
 ### zsh
 Z shell（Zsh）是一款可用作交互式登录的`shell`及脚本编写的命令解释器。`Zsh`对`Bourne` `shell`做出了大量改进，同时加入了`Bash`、`ksh`及`tcsh`的某些功能。
+<!-- more -->
 
 ### Oh My Zsh
 虽然`zsh`的功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的`bash`, 于是他创建了一个名为[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)的开源项目，于是新世界的大门打开了...
