@@ -76,9 +76,9 @@ img:
     sidebar_header: "/img/sidebar_header.png"
     random_thumbnail: "/img/random/material-"
     footer_image:
-        #upyun_logo:
-            #link: "https://www.upyun.com/"
-            #src: "/img/upyun_logo.svg"
+    #upyun_logo:
+    #link: "https://www.upyun.com/"
+    #src: "/img/upyun_logo.svg"
 
 # Custom Fonts
 #    family: the font-family which will be used in the theme
@@ -161,8 +161,8 @@ gallery:
 # TOC Button
 
 toc:
-#   use: choose whether the line_number of toc will show or not.
-#       Available value of "linenumber": true | false
+    #   use: choose whether the line_number of toc will show or not.
+    #       Available value of "linenumber": true | false
     linenumber: true
 
 # SNS Menu
@@ -211,10 +211,10 @@ sidebar:
         icon: chrome_reader_mode
         divider: false
     pages:
-        #About:
-            #link: "/about"
-            #icon: person
-            #divider: false
+    #About:
+    #link: "/about"
+    #icon: person
+    #divider: false
     article_num:
         use: true
         divider: false
@@ -236,16 +236,16 @@ sidebar:
 # If you want to use gitment or gitalk,you should get the client_id and client_secret from https://github.com/settings/applications/new
 # If you want to use valine,you should get the app_id and app_key from https://leancloud.cn ,more setting please see https://valine.js.org
 comment:
-    use:
+    use: gitalk
     shortname: # duoshuo or disqus shortname
     changyan_appid:
     changyan_conf:
     changyan_thread_key_type: path
     livere_data_uid:
-    gitment_repo:   # git repo of the hexo
-    gitment_owner:  # git repo's owner
-    gitment_client_id:  # github app client id
-    gitment_client_secret :  # github app client secret
+    gitment_repo: # git repo of the hexo
+    gitment_owner: # git repo's owner
+    gitment_client_id: # github app client id
+    gitment_client_secret : # github app client secret
     valine_leancloud_appId:  # leancloud application app id
     valine_leancloud_appKey:  # leancloud application app key
     valine_notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
@@ -255,10 +255,10 @@ comment:
     valine_lang: zh-cn # i18n
     valine_placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
     valine_guest_info: nick,mail,link #valine comment header info
-    gitalk_repo: # git repo of the hexo
-    gitalk_owner: # git repo's owner
-    gitalk_client_id: # github app client id
-    gitalk_client_secret: # github app client secret
+    gitalk_repo: lightWey.github.io
+    gitalk_owner: lightWey
+    gitalk_client_id: 9e273a6eca84479a7c25
+    gitalk_client_secret: cf38aa5ecee3ce253786f0d26346341440353ca0
     wildfire_database_provider: firebase # firebase or wilddog
     wildfire_wilddog_site_id:
     wildfire_firebase_api_key:
@@ -303,17 +303,17 @@ busuanzi:
 # Set a CDN for the files src you want to customize. The url should with protocol.
 # Default(empty) will load the files from the origin server.
 vendors:
-# MaterialCDN
-#   You can load theme unique files from your private cdn or oss.
-#   The new src will have the base domain you configured below.
-#   For example
-#       materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source
+    # MaterialCDN
+    #   You can load theme unique files from your private cdn or oss.
+    #   The new src will have the base domain you configured below.
+    #   For example
+    #       materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source
     materialcdn:
 
-# Third party library
-#   You can load these files from public cdn.
-#   For example
-#       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
+    # Third party library
+    #   You can load these files from public cdn.
+    #   For example
+    #       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
     # jQuery 2.2.0
     jquery:
     # nprogress 0.2.0
