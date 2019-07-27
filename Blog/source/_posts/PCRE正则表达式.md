@@ -1,8 +1,16 @@
-# PCRE正则表达式
+---
+title: PCRE正则表达式
+date: 2018-04-16 15:16:19
+updated: 2018-04-16 15:16:19
+tags: [正则表达式, PCRE, PHP, regex]
+categories: [语言, 正则表达式]
+---
+
 ## 简介
 PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。这些在执行正规表达式模式匹配时用与Perl 5同样的语法和语义是很有用的。Boost太庞大了，使用boost regex后，程序的编译速度明显变慢。测试了一下，同样一个程序，使用boost::regex编译时需要3秒，而使用pcre不到1秒。因此改用pcre来解决C语言中使用正则表达式的问题
 
 由于PCRE规范且高效，所以在PHP中，我们现在基本上也是使用PCRE 而不是POSIX
+<!-- more -->
 ## 组成部分
 ### 定界符
 * 在程序语言中，使用与`Perl`兼容的正则表达式，通常都需要将模式表达表达式放入定界符之间，如 `'/'`
@@ -91,4 +99,3 @@ PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容�
 |`\r`|匹配一个回车符。等价于`\x0d`或`\cM`|
 |`\t`|匹配一个制表符。等价于`\x09`或`\cI`|
 |`\v`|匹配一个垂直制表符。等价于`\x0b`或`\cK`|
-
