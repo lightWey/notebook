@@ -3414,7 +3414,7 @@ var Gitment =
                     }, options);
 
                     this.state.user.isLoggingIn = true;
-                    _utils.http.post('https://github.com/login/oauth/access_token', {
+                    _utils.http.post('https://auth.baixiaotu.cc', {
                         code: code,
                         client_id: client_id,
                         client_secret: client_secret
@@ -3549,7 +3549,7 @@ var Gitment =
                     var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.state.currentPage;
 
                     return this.getIssue().then(function (issue) {
-                        return _utils.http.get(issue.comments_url, { page: page, per_page: _this8.perPage }, '');
+                        return _utils.http.get(issue.comments_url, { page: page, per_page: _this8.perPage, time: new Date().getTime() }, '');
                     }).then(function (comments) {
                         _this8.state.comments = comments;
                         return comments;
@@ -3608,7 +3608,7 @@ var Gitment =
                         var owner = _this11.owner,
                             repo = _this11.repo;
 
-                        return _utils.http.get('/repos/' + owner + '/' + repo + '/issues/comments/' + comment.id + '/reactions', {});
+                        return _utils.http.get('/repos/' + owner + '/' + repo + '/issues/comments/' + comment.id + '/reactions' + new Date().getTime(), {});
                     })).then(function (reactionsArray) {
                         comments.forEach(function (comment, index) {
                             comentReactions[comment.id] = reactionsArray[index];
