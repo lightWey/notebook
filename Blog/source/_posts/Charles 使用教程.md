@@ -1,10 +1,4 @@
----
-title: Charles 使用教程
-date: 2019-04-27 20:14:06
-updated: 2019-04-27 20:14:06
-tags: [Charles,抓包工具]
-categories: [工具, 抓包]
----
+
 
 ## 简介
 是一个`HTTP`代理服务器，`HTTP`监视器,反转代理服务器，当浏览器连接`Charles`的代理访问互联网时，`Charles`可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的`HTTP`通信，这些包括`request`, `response`和`HTTP headers` （包含`cookies`与`caching`信息）。

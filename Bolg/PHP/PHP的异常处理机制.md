@@ -1,5 +1,13 @@
 # PHP的异常处理机制
 
+---
+title: Charles 使用教程
+date: 2019-04-27 20:14:06
+updated: 2019-04-27 20:14:06
+tags: [Charles,抓包工具]
+categories: [工具, 抓包]
+---
+
 ## 起因
 昨天晚上，看了下顺平老师的视频，原来一直没用到过php的异常处理，今天写一篇，记录下，先来了解下异常处理
 
@@ -13,7 +21,79 @@
 
 PHP 会按这些 catch 被定义的顺序执行，直到完成最后一个为止。而在这些 catch 内，又可以抛出新的异常。
 
+## 实践
 
+说的可能有点迷糊，直接上代码
 
+``` php
+tyy {
+	//可能会出现错误的代码放到这里
+} catch (Exception $e) {
+	//捕获到错误后的处理代码
+}
+```
 
+太基础的也就不说了，说说自己遇到的，抛出了异常，一定要捕获（也可以自己定义顶级异常处理），不然会产生一个错误
 
+``` php
+<?php
+function a($a){
+    if($a>5){
+        echo "您输入的值是".$a;
+    }else{
+        throw new Exception("本方法只接受大于5的数据");
+    }
+}
+ 
+function b($b){
+    if($b<5){
+        echo "您输入的值是".$b;
+    }else{
+        throw new Exception("本方法只接受大于5的数据");
+    }
+}
+a(5);
+```
+
+以上代码会产生如下错误
+
+``` php
+Fatal error: Uncaught exception 'Exception' with message '本方法只接受大于5的数据' in E:\WWW\pdemo\demo5.php:6
+Stack trace:
+#0 E:\WWW\pdemo\demo5.php(17): a(5)
+#1 C:\Users\Administrator\AppData\Local\Temp\dummy.php(1): include('E:\\WWW\\pdemo\\de...')
+#2 {main}
+  thrown in E:\WWW\pdemo\demo5.php on line 6
+```
+
+很显然这不是我们想看到的，我们需要定义捕获这段异常的代码
+
+``` php
+<?php
+function a($a){
+    if($a>5){
+        echo "您输入的值是".$a;
+    }else{
+        throw new Exception("本方法只接受大于5的数据");
+    }
+}
+ 
+function b($b){
+    if($b<5){
+        echo "您输入的值是".$b;
+    }else{
+        throw new Exception("本方法只接受大于5的数据");
+    }
+}
+try {
+    a(5);
+    echo "hello";
+}catch (Exception $e){
+    echo $e->getMessage()."<br />"; //获得异常信息
+    echo $e->getCode()."<br />"; //获得异常代码
+    echo $e->getFile()."<br />"; //获得异常文件
+    echo $e->getLine()."<br />"; //返回异常行数
+}
+```
+
+更多的内容可以去PHP的内置异常处理可以在手册/语言参考/[异常处理](https://www.php.net/manual/zh/class.exception.php)里面找到
