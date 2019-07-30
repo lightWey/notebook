@@ -4,8 +4,8 @@
 
 # Head info
 head:
-    favicon: "/img/favicon.png"
-    high_res_favicon: "/img/favicon.png"
+    favicon: "/img/w-logo.png"
+    high_res_favicon: "/img/w-logo.png"
     apple_touch_icon: "/img/favicon.png"
     keywords:
     site_verification:
@@ -62,16 +62,16 @@ thumbnail:
 #        color available value: black, blue, brown, green, multi, orange, pink, purple, red, white, yellow
 #        type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
-    purecolor: "#F5F5F5"
-    #bgimg: "/img/bg.png"
+    #purecolor: "#F5F5F5"
+    bgimg: "/img/bg.png"
     bing:
         enable: false
         parameter:
 
 # Images Settings
 img:
-    logo: "/img/logo.png"
-    avatar: "/img/avatar.png"
+    logo: "/img/m-logo.png"
+    avatar: "/img/cxk-avatar.png"
     daily_pic: "/img/daily_pic.png"
     sidebar_header: "/img/sidebar_header.png"
     random_thumbnail: "/img/random/material-"
@@ -242,7 +242,7 @@ comment:
     changyan_conf:
     changyan_thread_key_type: path
     livere_data_uid:
-    gitment_repo: lightWey.github.io
+    gitment_repo: comment_repository
     gitment_owner: lightWey
     gitment_client_id: 9e273a6eca84479a7c25
     gitment_client_secret : cf38aa5ecee3ce253786f0d26346341440353ca0
@@ -255,7 +255,7 @@ comment:
     valine_lang: zh-cn # i18n
     valine_placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
     valine_guest_info: nick,mail,link #valine comment header info
-    gitalk_repo: lightWey.github.io
+    gitalk_repo: comment_repository
     gitalk_owner: lightWey
     gitalk_client_id: 9e273a6eca84479a7c25
     gitalk_client_secret: cf38aa5ecee3ce253786f0d26346341440353ca0
