@@ -1,7 +1,7 @@
 ---
 title: PHP命名空间
-date: 2019-08-23 10:19:15
-updated: 2019-08-23 10:19:15
+date: 2016-08-23 10:19:15
+updated: 2016-08-23 10:19:15
 tags: [PHP, namespace]
 categories: [语言, PHP]
 ---
