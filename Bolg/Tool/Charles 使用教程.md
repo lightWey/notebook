@@ -13,46 +13,58 @@
 
 ## 开始使用
 ### 简单使用
-1. 点击[下载](http://www.baidu.com)
-2. 安装并注册软件
+1. 执行`brew 安装命令` `brew cask install charles`
+2. 注册软件
 3. 打开`菜单`->`Proxy`->`macOS Proxy`
-![name](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524808380.png?raw=true, '安装页面')
+
+>如果需要抓电脑的访问的包需要打开这个，如果只是抓手机包的话可以关闭
+
+![name](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524808380.png)
 4. 开始使用
-![name](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809040.png?raw=true,'开始使用')
+![name](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809040.png)
 ### 添加SSL证书
-![乱码](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809044.png?raw=true)
+![乱码](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809044.png)
 > 当我们访问`https`请求抓包乱码的试试，就需要添加`Charles`提供的`https`证书
  
 1. 首选下载证书 点击`菜单`->`Help`->`SSL Proxying`->`Install Charles Root Certificate`
-![下载证书](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809043.png?raw=true)
+![下载证书](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809043.png)
+
+> 这个是电脑证书，如果不需要抓电脑的包的话，可以不安装，但是建议安装。
+
 2. 然后点击加入钥匙串
-![加入证书](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809045.png?raw=true)
+![加入证书](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809045.png)
 3. 在钥匙串找到该证书，双击，给予信任
-![添加证书信任](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809041.png?raw=true)
+![添加证书信任](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809041.png)
 4. 然后点击`菜单`->`Proxy`->`SSL Proxying Setting` 按照下图配置
-![添加ssl代理](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809042.png?raw=true)
+
+>`*`的意思是抓所有的包，如果只想抓特定域名的包，可以填入指定域名
+
+![添加ssl代理](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809042.png)
 5. 成功之后再次抓取请求看看
-![添加ssl代理](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809047.png?raw=true)
+![添加ssl代理](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809047.png)
 
 ### 抓手机访问
 1. 首先确保手机和电脑在一个局域网下面，然后通过`ifconfig`命令查看电脑ip地址
-!['ifconfig'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809053.png?raw=true)
+
+> 可以通过`菜单`->`Help`->`Local Ip Addresses`查看更方便
+
+!['ifconfig'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809053.png)
 2. 点击`菜单`->`Proxy`->`Proxy Setting`打开`Enable transparent HTTP proxying`配置
-!['打开配置'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809054.png?raw=true)
+!['打开配置'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809054.png)
 3. 配置手机访问代理 `设置`->`Wi-Fi`->`wifi名右侧感叹号`->`HTTP代理`
-!['配置手机访问'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809054.jpeg?raw=true)
+!['配置手机访问'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809054.jpeg)
 4. 这个时候电脑会出现一个提示框，点`Allow`
-!['电脑提示框'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809051.png?raw=true)
+!['电脑提示框'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809051.png)
 5. 点击`菜单`->`Help`->`SSL Proxying`->`Install Charles Root Certificate on a Mobile Device or Remote Browser`
-!['获取手机证书'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809055.png?raw=true)
+!['获取手机证书'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809055.png)
 6. 电脑端会提示下载地址
-!['ifconfig'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809052.png?raw=true)
+!['ifconfig'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809052.png)
 7. 手机输入提示的`url`信息，提示安装描述文件
-!['ifconfig'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809049.png?raw=true)
+!['ifconfig'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809049.png)
 8. 这个时候在用手机访问网址发现还是不行
-!['ifconfig'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809048.png?raw=true)
+!['ifconfig'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809048.png)
 9. 去到`设置`->`通用`->`关于本机`->`证书信任设置`
-!['ifconfig'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809050.png?raw=true)
+!['ifconfig'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809050.png)
 10. 这时候再通过手机访问，发现电脑端的`Charles`已经可以正常抓包了
-!['ifconfig'](https://github.com/lightWey/notebook/blob/master/imageHost/2018/04/27/1524809056.png?raw=true)
+!['ifconfig'](https://dev.tencent.com/u/lightWay/p/notebook/git/raw/master/imageHost/2018/04/27/1524809056.png)
 ## 完
