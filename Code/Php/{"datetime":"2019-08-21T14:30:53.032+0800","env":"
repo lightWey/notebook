@@ -1,0 +1,46 @@
+{"datetime":"2019-08-21T14:30:53.032+0800","env":"beta","log_type":"zw4","log_level":"NOTICE","app_name":"sqkb-api-v2","uri":"/v2/brand/shop/myFollowList","status":1,"hn":"beta-api-v2-002-112-234","client_id":"3","device_id":"869619034835691","x_sqkb_trace_id":"01440487-b9bf-4630-a476-e753d8f76009","x_forwarded_for":"123.126.2.158, 127.0.0.1","remote_ip":"10.171.29.180","content":"1","message":"null"}
+
+{"datetime":"2019-08-21T14:30:53.037+0800","env":"beta","log_type":"zw4","log_level":"NOTICE","app_name":"sqkb-api-v2","uri":"/v2/brand/shop/myFollowList","status":1,"hn":"beta-api-v2-002-112-234","client_id":"3","device_id":"869619034835691","x_sqkb_trace_id":"01440487-b9bf-4630-a476-e753d8f76009","x_forwarded_for":"123.126.2.158, 127.0.0.1","remote_ip":"10.171.29.180","content":"[2,2]","message":"null"}
+
+
+{"datetime":"2019-08-21T14:30:53.037+0800","env":"beta","log_type":"zw4","log_level":"NOTICE","app_name":"sqkb-api-v2","uri":"/v2/brand/shop/myFollowList","status":1,"hn":"beta-api-v2-002-112-234","client_id":"3","device_id":"869619034835691","x_sqkb_trace_id":"01440487-b9bf-4630-a476-e753d8f76009","x_forwarded_for":"123.126.2.158, 127.0.0.1","remote_ip":"10.171.29.180","content":"[3,\"3\"]","message":"null"}
+
+
+{"datetime":"2019-08-21T14:30:53.037+0800","env":"beta","log_type":"zw4","log_level":"NOTICE","app_name":"sqkb-api-v2","uri":"/v2/brand/shop/myFollowList","status":1,"hn":"beta-api-v2-002-112-234","client_id":"3","device_id":"869619034835691","x_sqkb_trace_id":"01440487-b9bf-4630-a476-e753d8f76009","x_forwarded_for":"123.126.2.158, 127.0.0.1","remote_ip":"10.171.29.180","content":"[4,{\"id\":1,\"title\":\"默认全站基础返\",\"business_type\":0,\"platform\":0,\"ab_key\":\"rebate_word_V1\",\"user_type\":0,\"config\":\"[{\\\"ab_group\\\":[\\\"A\\\",\\\"B\\\",\\\"C\\\",\\\"D\\\",\\\"E\\\"],\\\"has\\\":[{\\\"threshold\\\":{\\\"min\\\":0.01,\\\"max\\\":9999},\\\"list\\\":{\\\"coupon_amount_content\\\":\\\"{{couponPrice}}元券\\\",\\\"rebate_amount_content\\\":\\\"现金红包\\\"},\\\"detail\\\":{\\\"detail_rebate_text\\\":\\\"买就返{{rebatePrice}}元\\\",\\\"detail_assist_text\\\":\\\"\\\",\\\"detail_ticket_rebate_text\\\":\\\"买就返{{rebatePrice}}元\\\",\\\"detail_ticket_assist_text\\\":\\\"好友助力再返{{assistPrice}}元\\\",\\\"detail_bottom_buy_rebate\\\":\\\"返{{rebatePrice}}元\\\",\\\"detail_bottom_buy_assist\\\":\\\"\\\"}}],\\\"not\\\":[{\\\"threshold\\\":{\\\"min\\\":0.01,\\\"max\\\":9999},\\\"list\\\":{\\\"coupon_amount_content\\\":\\\"{{couponPrice}}元券\\\",\\\"rebate_amount_content\\\":\\\"现金红包\\\"},\\\"detail\\\":{\\\"detail_rebate_text\\\":\\\"买就返{{rebatePrice}}元\\\",\\\"detail_assist_text\\\":\\\"\\\",\\\"detail_ticket_rebate_text\\\":\\\"买就返{{rebatePrice}}元\\\",\\\"detail_ticket_assist_text\\\":\\\"好友助力再返{{assistPrice}}元\\\",\\\"detail_bottom_buy_rebate\\\":\\\"返{{rebatePrice}}元\\\",\\\"detail_bottom_buy_assist\\\":\\\"\\\"}}]}]\",\"created_at\":\"2019-07-18 22:15:38\",\"updated_at\":\"2019-07-20 01:44:41\"}]","message":"null"}
+
+$(":reset").click(function () {location.reload();})
+        $('.shop_ids').iCheck({checkboxClass:'icheckbox_minimal-blue'});
+        $('#add-shop').click(function () {
+            layer.prompt({title: '请输入店铺名称', formType: 3}, function(content, index){
+
+            	layer.confirm('确认要继续吗？', {
+            		title: '这是个重要的操作',
+				  	btn: ['确认','取消']
+				}, function(){
+				  layer.msg('的确很重要', {icon: 1});
+				});
+                var load1 = layer.load(2, {shade: [0.7,'#fff'], time: 2000});
+                var next = true;
+                content = content.replace(/^\s*|\s*$/g,"");
+                $('label.shop_ids a').each(function () {
+                    if (next && $(this).text() == content) {
+                        next = false;
+                    }
+                });
+        
+                if (!next) {
+                    layer.close(load1);
+                    layer.msg('店铺已经存在');
+                    return false;
+                }
+        
+                $.post("/brand/{$this->id}/shop",{content:content, '_token':'{$token}'},function(result){
+                    layer.close(load1);
+                    if (result.code) {
+                        location.reload();
+                    } else {
+                        layer.msg(result.msg);
+                    }
+                });
+            });
+        });
