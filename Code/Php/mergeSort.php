@@ -24,10 +24,11 @@ function index(array &$arr)
  */
 function mSort(array &$arr, int $start, int $end)
 {
+//    print_r([$start, $end]);
     if ($start < $end) {
-        echo '----',PHP_EOL;
+        //echo '----',PHP_EOL;
         $mid = floor(($start + $end) / 2);
-        print_r([$start, $mid, $end]);
+//        print_r([$start, $mid, $end]);
         mSort($arr, $start, $mid);
         mSort($arr, $mid + 1, $end);
         merge($arr, $start, $mid, $end);
@@ -44,11 +45,12 @@ function mSort(array &$arr, int $start, int $end)
 function merge(array &$arr, int $start, int $mid, int $end)
 {
     print_r([$start, $mid, $end]);
-    echo '----',PHP_EOL;
+    //echo '----',PHP_EOL;
     $i = $start;
     $j = $mid + 1;
     $k = $start;
     $tempArr = [];
+
 
     while ($i != $mid + 1 && $j != $end + 1) {
         if ($arr[$i] >= $arr[$j]) {
@@ -57,15 +59,16 @@ function merge(array &$arr, int $start, int $mid, int $end)
             $tempArr[$k++] = $arr[$i++];
         }
     }
-
+    echo json_encode($tempArr),PHP_EOL;
     while ($i != $mid + 1) {
         $tempArr[$k++] = $arr[$i++];
     }
+    echo json_encode($tempArr),PHP_EOL;
 
     while ($j != $end + 1) {
         $tempArr[$k++] = $arr[$j++];
     }
-
+    echo json_encode($tempArr),PHP_EOL;
     for ($i = $start; $i <= $end; $i++) {
         $arr[$i] = $tempArr[$i];
     }
@@ -74,5 +77,3 @@ function merge(array &$arr, int $start, int $mid, int $end)
 $arr = [2,4,1,5,3];
 
 index($arr);
-
-//print_r($arr);
